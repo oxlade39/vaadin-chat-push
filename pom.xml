@@ -2,25 +2,9 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.github.oxlade39</groupId>
-    <artifactId>vaadin-example</artifactId>
+    <artifactId>vaadin-chat-push</artifactId>
     <version>1.0.0-SNAPSHOT</version>
     <name>vaadin example</name>
-
-    <repositories>
-        <repository>
-            <id>vaadin-snapshots</id>
-            <name>vaadin-snapshots</name>
-            <url>http://oss.sonatype.org/content/repositories/vaadin-snapshots/</url>
-            <snapshots>
-                <enabled>true</enabled>
-            </snapshots>
-            <releases>
-                <enabled>false</enabled>
-            </releases>
-        </repository>
-    </repositories>
-
-
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
