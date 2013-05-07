@@ -21,7 +21,8 @@ mvn clean install
 
 ## Run
 
-run the [_com.github.oxlade39.vaadin.Main_](https://github.com/oxlade39/vaadin-chat-push/blob/master/src/main/java/com/github/oxlade39/vaadin/Main.java) class.
+- run the [_com.github.oxlade39.vaadin.Main_](https://github.com/oxlade39/vaadin-chat-push/blob/master/src/main/java/com/github/oxlade39/vaadin/Main.java) class. or
+- run mvn exec:java
 
 I've written it to use an Embedded Jetty instance, just because I like a pure java solution.
 
