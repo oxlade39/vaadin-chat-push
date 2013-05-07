@@ -105,6 +105,15 @@
                     <forkMode>always</forkMode>
                 </configuration>
             </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>1.2.1</version>
+                <configuration>
+                    <executable>java</executable>
+                    <mainClass>com.github.oxlade39.vaadin.Main</mainClass>
+                </configuration>
+            </plugin>
         </plugins>
     </build>
 
