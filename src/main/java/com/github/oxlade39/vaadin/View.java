@@ -43,6 +43,7 @@ public class View extends UI {
         root.setComponentAlignment(loginForm, Alignment.MIDDLE_CENTER);
 
         setContent(root);
+        username.focus();
 
         final Chat chat = ((CustomVaadinServletService) request.getService()).getChat();
 
