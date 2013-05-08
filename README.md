@@ -26,4 +26,9 @@ mvn clean install
 
 I've written it to use an Embedded Jetty instance, just because I like a pure java solution.
 
+## Try it out
+
+I've deployed it to [heroku](http://vaadinchatpush.herokuapp.com/) which doesn't support websockets but the vaadin should
+ gracfully degrade to polling.
+
 TODO add more documentation...
