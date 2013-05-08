@@ -38,10 +38,10 @@ public class ChatTest {
         Chat chat = new Chat();
         ChatSession bobsSession = chat.join("bob");
 
-        EnqueueAction<UserJoinedEvent> joinedUsers = new EnqueueAction<UserJoinedEvent>();
+        EnqueueAction<UserJoinedEvent> joinedUsers = new EnqueueAction<>();
         bobsSession.joiningUsers().subscribe(joinedUsers);
 
-        ChatSession briansSession = chat.join("brian");
+        chat.join("brian");
 
         assertEquals("bob", joinedUsers.next().getUsername());
         assertEquals("brian", joinedUsers.next().getUsername());
@@ -60,7 +60,7 @@ public class ChatTest {
         ChatSession sender = chat.join("sender");
         ChatSession receiver = chat.join("receiver");
 
-        EnqueueAction<SendMessageEvent> messages = new EnqueueAction<SendMessageEvent>();
+        EnqueueAction<SendMessageEvent> messages = new EnqueueAction<>();
         receiver.getMessages().subscribe(messages);
 
         sender.send("publish");
