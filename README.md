@@ -19,6 +19,8 @@ More importantly I wanted to experiment with the new [vaadin](https://vaadin.com
 
 mvn clean install
 
+[![Build Status](https://travis-ci.org/oxlade39/vaadin-chat-push.png?branch=master)](https://travis-ci.org/oxlade39/vaadin-chat-push)
+
 ## Run
 
 - run the [_com.github.oxlade39.vaadin.Main_](https://github.com/oxlade39/vaadin-chat-push/blob/master/src/main/java/com/github/oxlade39/vaadin/Main.java) class. or
