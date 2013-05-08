@@ -6,6 +6,8 @@ import rx.util.functions.Func1;
  * @author dan
  */
 public class Functions {
+    private Functions(){}
+
     public static <T, V> Func1<T, Boolean> instanceOf(final Class<V> instance) {
         return new Func1<T, Boolean>() {
             @Override

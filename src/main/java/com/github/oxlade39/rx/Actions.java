@@ -7,6 +7,8 @@ import rx.util.functions.Action1;
  * @author dan
  */
 public class Actions {
+    private Actions(){}
+
     public static <T> Action1<T> runActionSafely(final UI ui, final Action1<T> toRun) {
         return new Action1<T>() {
             @Override

@@ -1,12 +1,10 @@
 package com.github.oxlade39.chat;
 
+import com.github.oxlade39.chat.event.SendMessageEvent;
 import com.github.oxlade39.chat.event.UserJoinedEvent;
 import com.github.oxlade39.chat.event.UserQuitEvent;
+import com.github.oxlade39.rx.EnqueueAction;
 import org.junit.Test;
-import rx.util.functions.Action1;
-
-import java.util.concurrent.BlockingQueue;
-import java.util.concurrent.LinkedBlockingQueue;
 
 import static org.junit.Assert.assertEquals;
 
@@ -56,25 +54,17 @@ public class ChatTest {
         chat.join("bob");
     }
 
-    private static class EnqueueAction<T> implements Action1<T> {
+    @Test
+    public void sendingAMessageWillPublishToSubscribers() throws Exception {
+        Chat chat = new Chat();
+        ChatSession sender = chat.join("sender");
+        ChatSession receiver = chat.join("receiver");
 
-        private final BlockingQueue<T> enqueued;
+        EnqueueAction<SendMessageEvent> messages = new EnqueueAction<SendMessageEvent>();
+        receiver.getMessages().subscribe(messages);
 
-        public EnqueueAction() {
-            this.enqueued = new LinkedBlockingQueue<>();
-        }
-
-        @Override
-        public void call(T item) {
-            enqueued.add(item);
-        }
-
-        public BlockingQueue<T> getEnqueued() {
-            return enqueued;
-        }
-
-        public T next() {
-            return enqueued.poll();
-        }
+        sender.send("publish");
+        assertEquals("publish", messages.next().getMessage());
     }
+
 }
